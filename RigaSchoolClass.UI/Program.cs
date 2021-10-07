@@ -10,6 +10,8 @@ namespace RigaSchoolClass.UI
             Console.Write("Hello World line 2.1!");
             Console.Write("Hello World line 2.2!");
             Console.ReadKey();
+
+            //Comment
         }
     }
 }
