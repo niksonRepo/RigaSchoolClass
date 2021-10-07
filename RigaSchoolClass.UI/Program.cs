@@ -9,6 +9,8 @@ namespace RigaSchoolClass.UI
             Console.Write("My name is Natalija\n\nI am from Latvia\n\nI learn C#\n\nYou too?\n\nCongratulations!");
             Console.ReadKey();
             //Comanet
+            //Comanet
+            //Comanet
         }
     }
 }
