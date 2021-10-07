@@ -8,5 +8,6 @@ namespace RigaSchoolClass.UI.Folder
 {
     class TheClass
     {
+        ///zxcxzczxc
     }
 }
