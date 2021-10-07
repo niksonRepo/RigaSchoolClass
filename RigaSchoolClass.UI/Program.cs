@@ -6,10 +6,9 @@ namespace RigaSchoolClass.UI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World line 1!");
-            Console.Write("Hello World line 2.1!");
-            Console.Write("Hello World line 2.2!");
+            Console.Write("My name is Natalija\n\nI am from Latvia\n\nI learn C#\n\nYou too?\n\nCongratulations!");
             Console.ReadKey();
+            //Comanet
         }
     }
 }
