@@ -1,4 +1,5 @@
 ﻿using System;
+using AnimalLibrary;
 
 namespace Module_6_2
 {
@@ -9,20 +10,20 @@ namespace Module_6_2
             var animal = new Animals()
             {
                 Name = "Fox",
-                TypeOfAnimals = AnimalTypes.Mammal.ToString()
+                TypeOfAnimals = ""
             };
 
-            var fox = new Fox
+            var fox = new Fox()
             {
                 Name = "Foxy",
                 SkinColor = "Orange",
                 IsMammals = true,
-                TypeOfAnimals = AnimalTypes.Mammal.ToString()
+                TypeOfAnimals = ""
             };
 
             //fox.
 
-            Console.WriteLine($"Is animal mammal: {animal.IsMammals} - yes Position {(int)AnimalTypes.Mammal}");
+            Console.WriteLine($"Is animal mammal: {animal.IsMammals} - yes Position ");
             Console.ReadLine();
         }
     }

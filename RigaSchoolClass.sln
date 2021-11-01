@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module_6_2", "Module_6.2\Mo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module_6_2_Part_2", "Module 6_2_Part_2\Module_6_2_Part_2.csproj", "{2C2ADCF6-7DDB-4334-A233-D72BB0EC0CA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalLibrary", "AnimalLibrary\AnimalLibrary.csproj", "{A83D0658-2B37-45E3-96CD-4993BC3D49FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2C2ADCF6-7DDB-4334-A233-D72BB0EC0CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C2ADCF6-7DDB-4334-A233-D72BB0EC0CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C2ADCF6-7DDB-4334-A233-D72BB0EC0CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83D0658-2B37-45E3-96CD-4993BC3D49FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83D0658-2B37-45E3-96CD-4993BC3D49FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83D0658-2B37-45E3-96CD-4993BC3D49FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83D0658-2B37-45E3-96CD-4993BC3D49FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
