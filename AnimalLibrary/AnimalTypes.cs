@@ -1,4 +1,4 @@
-﻿namespace Module_6_2
+﻿namespace AnimalLibrary
 {
     enum AnimalTypes
     {

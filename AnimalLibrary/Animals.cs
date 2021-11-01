@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Module_6_2
+namespace AnimalLibrary
 {
     public class Animals: BaseAnimal
     {

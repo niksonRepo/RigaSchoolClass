@@ -6,4 +6,8 @@
     <RootNamespace>Module_6_2</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AnimalLibrary\AnimalLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

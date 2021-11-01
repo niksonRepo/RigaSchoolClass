@@ -1,5 +1,5 @@
 ﻿using System;
-using Module_6_2;
+using AnimalLibrary;
 
 namespace Module_6_2_Part_2
 {
