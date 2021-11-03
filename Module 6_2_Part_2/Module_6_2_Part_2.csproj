@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AnimalLibrary\AnimalLibrary.csproj" />
+    <ProjectReference Include="..\Module_6.2\Module_6_2.csproj" />
   </ItemGroup>
 
 </Project>

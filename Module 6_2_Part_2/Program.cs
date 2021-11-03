@@ -9,8 +9,14 @@ namespace Module_6_2_Part_2
         {
             var fox = new Fox()
             {
-                IsMammals = true
+                //IsMammals = true
             };
+            fox.WhatDoesAnimalSay();
+
+            var animal = new Animals();
+            animal.WhatDoesAnimalSay();
+
+            Console.ReadLine();
         }
     }
 }
