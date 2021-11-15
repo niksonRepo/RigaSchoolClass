@@ -8,7 +8,7 @@ namespace AnimalLibrary
 {
     public abstract class AbstractAnimal
     {
-        public abstract void WhatDoesAnimalDo();
+        public abstract void RandomAnimalSound();
 
         public void Sleep()
         {

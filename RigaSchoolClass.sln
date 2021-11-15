@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31702.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly", "Module_2\Assembly.csproj", "{DF8D9EC9-44F9-414A-8429-E57CCEA16465}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assembly_2", "Assembly_2\Assembly_2.csproj", "{B041EACF-9347-44DE-BD34-15ADE0568AF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module_6_2", "Module_6.2\Module_6_2.csproj", "{9FACF50B-E476-46AF-A88E-72D206F3E638}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module_6_2", "Module_6.2\Module_6_2.csproj", "{9FACF50B-E476-46AF-A88E-72D206F3E638}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module_6_2_Part_2", "Module 6_2_Part_2\Module_6_2_Part_2.csproj", "{2C2ADCF6-7DDB-4334-A233-D72BB0EC0CA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module_6_2_Part_2", "Module 6_2_Part_2\Module_6_2_Part_2.csproj", "{2C2ADCF6-7DDB-4334-A233-D72BB0EC0CA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalLibrary", "AnimalLibrary\AnimalLibrary.csproj", "{A83D0658-2B37-45E3-96CD-4993BC3D49FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalLibrary", "AnimalLibrary\AnimalLibrary.csproj", "{A83D0658-2B37-45E3-96CD-4993BC3D49FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections", "Collections\Collections.csproj", "{6DA9BEC1-2F5F-4D40-9953-17E09BE14094}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{A83D0658-2B37-45E3-96CD-4993BC3D49FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A83D0658-2B37-45E3-96CD-4993BC3D49FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A83D0658-2B37-45E3-96CD-4993BC3D49FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA9BEC1-2F5F-4D40-9953-17E09BE14094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA9BEC1-2F5F-4D40-9953-17E09BE14094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA9BEC1-2F5F-4D40-9953-17E09BE14094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA9BEC1-2F5F-4D40-9953-17E09BE14094}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
