@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalLibrary", "AnimalLibr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collections", "Collections\Collections.csproj", "{6DA9BEC1-2F5F-4D40-9953-17E09BE14094}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module_7", "Module_7\Module_7.csproj", "{31859B7F-349C-4A3D-8208-0B87DFDEFBF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module_7", "Module_7\Module_7.csproj", "{31859B7F-349C-4A3D-8208-0B87DFDEFBF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLSerializer", "XMLSerializer\XMLSerializer.csproj", "{661FC46C-5DCE-4C34-9C8F-7FC815EA66FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{31859B7F-349C-4A3D-8208-0B87DFDEFBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31859B7F-349C-4A3D-8208-0B87DFDEFBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31859B7F-349C-4A3D-8208-0B87DFDEFBF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{661FC46C-5DCE-4C34-9C8F-7FC815EA66FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{661FC46C-5DCE-4C34-9C8F-7FC815EA66FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{661FC46C-5DCE-4C34-9C8F-7FC815EA66FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{661FC46C-5DCE-4C34-9C8F-7FC815EA66FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

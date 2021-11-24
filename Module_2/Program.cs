@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Assembly_2;
@@ -10,22 +11,19 @@ namespace Assembly
     {
         private static void Main(string[] args)
         {
-            var car = new Car()
-            {
-                color = "red",
-                model = CarConstants.bmw
-            };
+            var car = new Car() {model = "audi", color = "red"};
+            ChangeModel(car);
 
-            CarConstants.bmw = "bmw 5";
-            
-            Console.WriteLine(car.color);
-
-            Console.WriteLine(car.model);
-
+            Console.WriteLine("Model: " + car.model);
             Console.ReadLine();
         }
 
         #region Functionality
+
+        public static void ChangeModel(Car car)
+        {
+            car.model = "Jaguar";
+        }
 
         private static void FindArrayMaxNumber()
         {
