@@ -1,6 +1,7 @@
 ﻿using System.Text.Json;
 using Assembly;
 using System.Xml.Serialization;
+using System.Collections.Generic;
 
 namespace XMLSerializer
 {
@@ -11,26 +12,28 @@ namespace XMLSerializer
         static void Main(string[] args)
         {
             var car = new Car(){model = "audi", color = "black"};
-            //XmlSerialization(car);
+            XmlSerialization(car);
             JsonSerialization(car);
 
             Console.ReadLine();
-        }   
+        }
 
         public static void XmlSerialization(Car car)
         {
-            var serializer = new XmlSerializer(typeof(Car));
+            var list = new List<Car> {car, car};
 
-            using (var fs = new FileStream(FilePath, FileMode.OpenOrCreate))
+            var serializer = new XmlSerializer(typeof(List<Car>));
+
+            using (var fs = new FileStream(FilePath, FileMode.Open))
             {
-                serializer.Serialize(fs, car);
+                serializer.Serialize(fs, list);
             }
 
             using (var fs = new FileStream(FilePath, FileMode.OpenOrCreate))
             {
-                var carFromFile = (Car)serializer.Deserialize(fs);
+                var carFromFile = (List<Car>)serializer.Deserialize(fs);
 
-                Console.WriteLine($"Car object : model = {carFromFile.model} color = {carFromFile.color}");
+                Console.WriteLine($"Car object : model = {carFromFile.FirstOrDefault().model} color = {carFromFile.FirstOrDefault().color}");
 
             }
         }
