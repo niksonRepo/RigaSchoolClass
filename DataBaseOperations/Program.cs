@@ -31,14 +31,17 @@ namespace DataBaseOperations
                 try
                 {
                     connection.Open();
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        //please full field your object properties here
-                        Console.WriteLine("\t{0}\t{1}\t{2}",
-                            reader[0], reader[1], reader[2]);
-                    }
-                    reader.Close();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                    //SqlDataReader reader = command.ExecuteReader();
+                    //while (reader.Read())
+                    //{
+                    //    //please full field your object properties here
+                    //    Console.WriteLine("\t{0}\t{1}\t{2}",
+                    //        reader[0], reader[1], reader[2]);
+                    //}
+                    //reader.Close();
+                    Console.WriteLine("Successfully execute script");
                 }
                 catch (Exception ex)
                 {
