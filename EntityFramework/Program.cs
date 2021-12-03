@@ -7,6 +7,11 @@ namespace EntityFramework
     {
         static void Main(string[] args)
         {
+            using (var context = new UniversityDbContext())
+            {
+                context.Database.EnsureCreated();
+            }
+
             var students1 = GetStudents();
             students1.ForEach( x=> Console.WriteLine(x.Name));
 
