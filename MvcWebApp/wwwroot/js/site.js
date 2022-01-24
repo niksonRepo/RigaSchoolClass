@@ -3,6 +3,6 @@
 
 // Write your JavaScript code.
 
-$("#MyOwnButtonId").click(function() {
-    alert("You clicked on the button");
-});
+//$("#MyOwnButtonId").click(function() {
+//    alert("You clicked on the button");
+//});
