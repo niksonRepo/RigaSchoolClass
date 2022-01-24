@@ -23,7 +23,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseOperations", "DataB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{8A121608-65A2-45D4-9D86-25DCDC0DCC0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcWebApp", "MvcWebApp\MvcWebApp.csproj", "{D12E440B-BC92-4979-86B8-FFD8B2FC5E3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcWebApp", "MvcWebApp\MvcWebApp.csproj", "{D12E440B-BC92-4979-86B8-FFD8B2FC5E3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XSDproject", "XSDproject\XSDproject.csproj", "{A619350F-FF5C-4AB5-928D-52B092E96F63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{D12E440B-BC92-4979-86B8-FFD8B2FC5E3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D12E440B-BC92-4979-86B8-FFD8B2FC5E3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D12E440B-BC92-4979-86B8-FFD8B2FC5E3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A619350F-FF5C-4AB5-928D-52B092E96F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A619350F-FF5C-4AB5-928D-52B092E96F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A619350F-FF5C-4AB5-928D-52B092E96F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A619350F-FF5C-4AB5-928D-52B092E96F63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
