@@ -31,14 +31,7 @@ namespace XSDproject
             xml.Load(xmlPath);
             xml.Schemas.Add(null, xsdPath);
 
-            try
-            {
-                xml.Validate(null);
-            }
-            catch (XmlSchemaValidationException ex)
-            {
-                throw new XmlSchemaValidationException(ex.Message);
-            }
+            xml.Validate(null);
 
             return true;
         }
