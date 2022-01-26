@@ -1,54 +1,77 @@
-﻿using System.Data.SqlClient;
+﻿using EntityFramework.Context;
 
-namespace DataBaseOperations
+namespace EntityFramework
 {
     class Program
     {
         static void Main(string[] args)
         {
-            string connectionString =
-                "Data Source=(local);Initial Catalog=UniversityDB;Integrated Security=true";
+            //using (var context = new UniversityDbContext())
+            //{
+            //    context.Database.EnsureCreated();
+            //}
 
-            // Provide the query string with a parameter placeholder.
-            string queryString = "select * from Students " +
-                                 "where Name = @name";
+            //var students1 = GetStudents();
+            //students1.ForEach( x=> Console.WriteLine(x.Name));
 
-            // Specify the parameter value.
-            var paramValue = "John";
+            //AddStudentToDataBase();
 
-            // Create and open the connection in a using block. This
-            // ensures that all resources will be closed and disposed
-            // when the code exits.
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            //var students = GetStudents();
+            //students.ForEach( x=> Console.WriteLine(x.Name));
+
+            //UpdateStudent();
+
+            var students = GetStudentsByCourseId(1);
+            Console.ReadLine();
+        }
+
+        public static List<Students> GetStudents()
+        {
+            List<Students> students;
+            
+            using (var context = new UniversityDbContext())
             {
-                // Create the Command and Parameter objects.
-                SqlCommand command = new SqlCommand(queryString, connection);
-                command.Parameters.AddWithValue("@name", paramValue);
+                students = context.Students.ToList();
+            }
 
-                // Open the connection in a try/catch block.
-                // Create and execute the DataReader, writing the result
-                // set to the console window.
-                try
+            return students;
+        }
+        public static void AddStudentToDataBase()
+        {
+            var newStudent = new Students()
+            {
+                Name = "asd",
+                Surname = "asdsad"
+            };
+
+            using (var context = new UniversityDbContext())
+            {
+                context.Students.Add(newStudent);
+                context.SaveChanges();
+            }
+        }
+        public static void UpdateStudent()
+        {
+            using (var context = new UniversityDbContext())
+            {
+                var student = context.Students.FirstOrDefault(x => x.Name == "John");
+                
+                if (student != null)
                 {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    connection.Close();
-                    //SqlDataReader reader = command.ExecuteReader();
-                    //while (reader.Read())
-                    //{
-                    //    //please full field your object properties here
-                    //    Console.WriteLine("\t{0}\t{1}\t{2}",
-                    //        reader[0], reader[1], reader[2]);
-                    //}
-                    //reader.Close();
-                    Console.WriteLine("Successfully execute script");
+                    context.Update(student);
+                    context.SaveChanges();
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                Console.ReadLine();
+
+            }
+        }
+
+        public static List<Students> GetStudentsByCourseId(int id)
+        {
+            using (var context = new UniversityDbContext())
+            {
+                return context.GetStudentsByCourseId(id).ToList();
             }
         }
     }
+
 }
