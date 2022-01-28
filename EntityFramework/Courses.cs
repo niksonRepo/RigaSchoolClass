@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace EntityFramework
 {
-    public class Students
+    public class Courses
     {
-        [Key] 
+        [Key]
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public ICollection<Students> Student { get; set; }
+        public string? Name { get; set; }
+        [ForeignKey("FK_Courses_Students")]
+        public int StudentId { get; set; }
     }
 }
