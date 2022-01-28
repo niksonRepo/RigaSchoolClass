@@ -9,9 +9,11 @@ namespace XSDproject
         static void Main(string[] args)
         {
             Console.WriteLine("XML schema validation");
-
-            var xmlDoc = @"xmFile.xml";
-            var xsdDoc = @"xsdFile.xsd";
+            
+            //var xmlDoc = @"xmFile.xml";
+            //var xsdDoc = @"xsdFile.xsd";
+            var xmlDoc = @"DanutasXML.xml";
+            var xsdDoc = @"DanutasXSD.xsd";
 
             try
             {

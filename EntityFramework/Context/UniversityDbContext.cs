@@ -7,11 +7,12 @@ namespace EntityFramework.Context
     public class UniversityDbContext : DbContext
     {
         public DbSet<Students> Students { get; set; } //student table
+        public DbSet<Courses> Courses { get; set; } //student table
 
-        public IQueryable<Students> GetStudentsByCourseId(int id)
+        public IQueryable<Courses> GetStudentsByCourseId(int id)
         {
             var pId = new SqlParameter("@CourseId", id);
-            return this.Students.FromSqlRaw("EXECUTE GetStudentsByCourseId @CourseId", pId);
+            return this.Courses.FromSqlRaw("EXECUTE GetStudentsByCourseId @CourseId", pId);
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
