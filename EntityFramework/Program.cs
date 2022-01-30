@@ -6,10 +6,10 @@ namespace EntityFramework
     {
         static void Main(string[] args)
         {
-            //using (var context = new UniversityDbContext())
-            //{
-            //    context.Database.EnsureCreated();
-            //}
+            using (var context = new UniversityDbContext())
+            {
+                context.Database.EnsureCreated();
+            }
 
             //var students1 = GetStudents();
             //students1.ForEach( x=> Console.WriteLine(x.Name));
@@ -21,7 +21,7 @@ namespace EntityFramework
 
             //UpdateStudent();
 
-            var coursesByStudentId = GetCoursesByStudentId(1);
+            var coursesByStudentId = GetCoursesByStudentId(1, 1);
             Console.ReadLine();
         }
 
@@ -64,11 +64,11 @@ namespace EntityFramework
 
             }
         }
-        public static List<Courses> GetCoursesByStudentId(int studentId)
+        public static List<Courses> GetCoursesByStudentId(int studentId, int courseId)
         {
             using (var context = new UniversityDbContext())
             {
-                return context.GetCoursesByStudentId(studentId).ToList();
+                return context.GetCoursesByStudentId(studentId, courseId).ToList();
             }
         }
     }

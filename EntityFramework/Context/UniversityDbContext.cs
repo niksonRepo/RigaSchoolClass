@@ -9,10 +9,11 @@ namespace EntityFramework.Context
         public DbSet<Students> Students { get; set; } //student table
         public DbSet<Courses> Courses { get; set; } //student table
 
-        public IQueryable<Courses> GetCoursesByStudentId(int id)
+        public IQueryable<Courses> GetCoursesByStudentId(int studentid, int courseId)
         {
-            var pId = new SqlParameter("@StudentId", id);
-            return this.Courses.FromSqlRaw("EXECUTE GetStudentsByCourseId @StudentId", pId);
+            var pId = new SqlParameter("@StudentId", studentid);
+            var pId1 = new SqlParameter("@CourseId", courseId);
+            return this.Courses.FromSqlRaw("EXECUTE GetStudentsByCourseId @StudentId, @CourseId", pId, pId1);
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>
