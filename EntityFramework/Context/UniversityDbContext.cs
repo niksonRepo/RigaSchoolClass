@@ -11,8 +11,8 @@ namespace EntityFramework.Context
 
         public IQueryable<Courses> GetStudentsByCourseId(int id)
         {
-            var pId = new SqlParameter("@CourseId", id);
-            return this.Courses.FromSqlRaw("EXECUTE GetStudentsByCourseId @CourseId", pId);
+            var pId = new SqlParameter("@StudentId", id);
+            return this.Courses.FromSqlRaw("EXECUTE GetStudentsByCourseId @StudentId", pId);
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) =>

@@ -13,7 +13,6 @@ namespace Dapper
     public class StudentRepository
     {
         private string conStringSqlServer = "Data Source=(local); Initial Catalog=StudentsDatabase; Trusted_Connection=True;";
-        private string conStringSqlLite = "Data Source=StudentsDB.db;";
         private static SQLiteConnection _dbConnection;
 
         private static void CreateIfNotExistsAndOpenDb()
