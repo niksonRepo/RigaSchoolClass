@@ -21,7 +21,7 @@ namespace EntityFramework
 
             //UpdateStudent();
 
-            var coursesByStudentId = GetStudentsByCourseId(1);
+            var coursesByStudentId = GetCoursesByStudentId(1);
             Console.ReadLine();
         }
 
@@ -64,11 +64,11 @@ namespace EntityFramework
 
             }
         }
-        public static List<Courses> GetStudentsByCourseId(int studentId)
+        public static List<Courses> GetCoursesByStudentId(int studentId)
         {
             using (var context = new UniversityDbContext())
             {
-                return context.GetStudentsByCourseId(studentId).ToList();
+                return context.GetCoursesByStudentId(studentId).ToList();
             }
         }
     }

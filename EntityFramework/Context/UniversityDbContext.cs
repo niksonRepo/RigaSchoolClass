@@ -9,7 +9,7 @@ namespace EntityFramework.Context
         public DbSet<Students> Students { get; set; } //student table
         public DbSet<Courses> Courses { get; set; } //student table
 
-        public IQueryable<Courses> GetStudentsByCourseId(int id)
+        public IQueryable<Courses> GetCoursesByStudentId(int id)
         {
             var pId = new SqlParameter("@StudentId", id);
             return this.Courses.FromSqlRaw("EXECUTE GetStudentsByCourseId @StudentId", pId);
