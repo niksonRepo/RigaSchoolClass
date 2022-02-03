@@ -1,8 +1,26 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿$(document).ready(function () {
 
-// Write your JavaScript code.
+    $("#MyOwnButtonId").click(function () {
+        event.preventDefault();
+        var serviceUrl = "/MyOwn/ModifyViewData";
+        
+        var dataModel = {
+            MyOwnName: "Andris",
+            MyOwnEmail: "andris@inbox.lv",
+            MyOwnPhone: "+371 22887458"
+        };
 
-//$("#MyOwnButtonId").click(function() {
-//    alert("You clicked on the button");
-//});
+        $.post(serviceUrl, dataModel, function () {
+            console.log("success");
+        })
+            .done(function (data, status) {
+                console.log(data);
+            })
+            .fail(function (data, status) {
+                alert("error");
+            })
+            .always(function (data, status) {
+
+            });
+    });
+});
