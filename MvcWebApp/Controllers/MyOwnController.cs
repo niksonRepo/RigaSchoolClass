@@ -5,6 +5,7 @@ namespace MvcWebApp.Controllers
 {
     public class MyOwnController : Controller
     {
+
         public IActionResult Index()
         {
             var model = new MyOwnModel()
@@ -18,9 +19,24 @@ namespace MvcWebApp.Controllers
             return View(model);
         }
 
-        public IActionResult ModifyViewData(string dataValue)
+        [HttpPost]
+        public JsonResult ModifyViewData(MyOwnModel dataModel)
         {
-            return RedirectToAction("Index");
+            try
+            {
+                var model = new MyOwnModel()
+                {
+                    MyOwnName = dataModel.MyOwnName,
+                    MyOwnEmail = dataModel.MyOwnEmail,
+                    MyOwnPhone = dataModel.MyOwnPhone
+                };
+
+                return Json(new {model, status = "Success"});
+            }
+            catch (Exception ex)
+            {
+                return Json(new {status = "Fail", exceptionMessage = ex.Message});
+            }
         }
 
         public void ModifyViewData1(string dataValue)
