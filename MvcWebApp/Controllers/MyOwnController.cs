@@ -5,7 +5,6 @@ namespace MvcWebApp.Controllers
 {
     public class MyOwnController : Controller
     {
-
         public IActionResult Index()
         {
             var model = new MyOwnModel()
@@ -24,14 +23,14 @@ namespace MvcWebApp.Controllers
         {
             try
             {
-                var model = new MyOwnModel()
-                {
-                    MyOwnName = dataModel.MyOwnName,
-                    MyOwnEmail = dataModel.MyOwnEmail,
-                    MyOwnPhone = dataModel.MyOwnPhone
-                };
+                var nameValidationMessage = "";
 
-                return Json(new {model, status = "Success"});
+                if (dataModel.MyOwnName.Length < 10)
+                {
+                    nameValidationMessage = "Name is not valid. Please use less then 10 symbols";
+                }
+
+                return Json(new {nameMassege = nameValidationMessage, status = "Fail"});
             }
             catch (Exception ex)
             {
@@ -39,9 +38,9 @@ namespace MvcWebApp.Controllers
             }
         }
 
-        public void ModifyViewData1(string dataValue)
+        public void ModifyViewData1()
         {
-            ViewData["Title"]= dataValue;
+
         }
     }
 }

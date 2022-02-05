@@ -2,6 +2,7 @@
 
     $("#MyOwnButtonId").click(function () {
         event.preventDefault();
+                        // /Controller/Method Name
         var serviceUrl = "/MyOwn/ModifyViewData";
         
         var dataModel = {
@@ -14,6 +15,10 @@
             console.log("success");
         })
             .done(function (data, status) {
+                if (data.nameMassege != "") {
+                    alert(data.nameMassege);
+                }
+
                 console.log(data);
             })
             .fail(function (data, status) {
