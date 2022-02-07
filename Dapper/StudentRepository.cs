@@ -40,8 +40,6 @@ namespace Dapper
 
         public List<Students> GetLiteStudents()
         {
-
-
             CreateIfNotExistsAndOpenDb();
 
             var studentListQuery = @"
