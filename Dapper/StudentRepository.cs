@@ -12,7 +12,7 @@ namespace Dapper
 {
     public class StudentRepository
     {
-        private string conStringSqlServer = "Data Source=(local); Initial Catalog=StudentsDatabase; Trusted_Connection=True;";
+        private const string ConStringSqlServer = "Data Source=(local); Initial Catalog=StudentsDatabase; Trusted_Connection=True;";
         private static SQLiteConnection _dbConnection;
 
         private static void CreateIfNotExistsAndOpenDb()
@@ -32,7 +32,7 @@ namespace Dapper
         {
             var studentListQuery = "Select * From Students";
 
-            using (var connection = new SqlConnection(conStringSqlServer))
+            using (var connection = new SqlConnection(ConStringSqlServer))
             {
                 return connection.Query<Students>(studentListQuery).ToList();
             }
