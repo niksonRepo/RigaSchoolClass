@@ -10,14 +10,21 @@
 
         public static async void GetResults()
         {
-            var task1 = Task.Run(async () =>
-            {
-                await WriteTodayDate();
-            });
+            //var task1 = Task.Run(async () =>
+            //{
+            //    await WriteTodayDate();
+            //});
 
-            var task2 = Task.Run(async () =>
+            //var task2 = Task.Run(async () =>
+            //{
+            //    await WriteYesterdayDate();
+            //});
+
+            var task3 = Task.Run(async () =>
             {
-                await WriteYesterdayDate();
+                var movies = await GetMoviesAsync("BetMan");
+
+                Console.WriteLine(movies.Content.ReadAsStringAsync ().Result);
             });
 
             //var awaiter = task1.GetAwaiter();
@@ -27,6 +34,16 @@
             //await WriteYesterdayDate();
 
             var asyncResults = await GetTodayDate();
+        }
+
+        public static async Task<HttpResponseMessage> GetMoviesAsync ( string movieTitle )
+        {
+            var url = @"http://www.omdbapi.com/?t={" + movieTitle + @"}&apikey=3e9b408";
+
+            using ( var httpClient = new HttpClient () )
+            {
+                return await httpClient.GetAsync ( url );
+            }
         }
 
         //Return string type result
