@@ -10,22 +10,22 @@
 
         public static async void GetResults()
         {
-            //var task1 = Task.Run(async () =>
-            //{
-            //    await WriteTodayDate();
-            //});
-
-            //var task2 = Task.Run(async () =>
-            //{
-            //    await WriteYesterdayDate();
-            //});
-
-            var task3 = Task.Run(async () =>
+            var task1 = Task.Run(async () =>
             {
-                var movies = await GetMoviesAsync("BetMan");
-
-                Console.WriteLine(movies.Content.ReadAsStringAsync ().Result);
+                await WriteTodayDate();
             });
+
+            var task2 = Task.Run(async () =>
+            {
+                await WriteYesterdayDate();
+            });
+
+            //var task3 = Task.Run(async () =>
+            //{
+            //    var movies = await GetMoviesAsync("BetMan");
+
+            //    Console.WriteLine(movies.Content.ReadAsStringAsync ().Result);
+            //});
 
             //var awaiter = task1.GetAwaiter();
             //var result = awaiter.GetResult();
