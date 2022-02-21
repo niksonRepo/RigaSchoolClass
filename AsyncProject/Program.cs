@@ -1,4 +1,5 @@
-﻿namespace AsyncProject
+﻿using Newtonsoft.Json;
+namespace AsyncProject
 {
     public class Program
     {
@@ -10,22 +11,23 @@
 
         public static async void GetResults()
         {
-            var task1 = Task.Run(async () =>
-            {
-                await WriteTodayDate();
-            });
-
-            var task2 = Task.Run(async () =>
-            {
-                await WriteYesterdayDate();
-            });
-
-            //var task3 = Task.Run(async () =>
+            //var task1 = Task.Run(async () =>
             //{
-            //    var movies = await GetMoviesAsync("BetMan");
-
-            //    Console.WriteLine(movies.Content.ReadAsStringAsync ().Result);
+            //    await WriteTodayDate();
             //});
+
+            //var task2 = Task.Run(async () =>
+            //{
+            //    await WriteYesterdayDate();
+            //});
+
+            var task3 = Task.Run(async () =>
+            {
+                var movies = await GetMoviesAsync("Batman");
+                var jsonString = movies.Content.ReadAsStringAsync().Result;
+
+                Console.WriteLine(JsonConvert.DeserializeObject(jsonString));
+            });
 
             //var awaiter = task1.GetAwaiter();
             //var result = awaiter.GetResult();
@@ -39,6 +41,7 @@
         public static async Task<HttpResponseMessage> GetMoviesAsync ( string movieTitle )
         {
             var url = @"http://www.omdbapi.com/?t={" + movieTitle + @"}&apikey=3e9b408";
+            //var url = @"https://localhost:7128/WeatherForecast";
 
             using ( var httpClient = new HttpClient () )
             {
