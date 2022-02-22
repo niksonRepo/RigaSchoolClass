@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Net.Http.Headers;
 
 namespace WebApiApplication.Controllers
 {
@@ -12,10 +13,12 @@ namespace WebApiApplication.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IHttpClientFactory httpClientFactory)
         {
             _logger = logger;
+            _httpClientFactory = httpClientFactory;
         }
 
         [HttpGet]
@@ -44,6 +47,23 @@ namespace WebApiApplication.Controllers
         {
             _logger.LogWarning("test warning");
             return name;
+        }
+
+        [HttpPost]
+        [Route("{movieTitle}")]
+        public async Task<string> GetMovies(string movieTitle)
+        {
+            var url = @"http://www.omdbapi.com/?t={" + movieTitle + @"}&apikey=3e9b408";
+
+            var httpClient = _httpClientFactory.CreateClient();
+            var response = await httpClient.GetAsync(url);
+
+            if ( response.IsSuccessStatusCode )
+            {
+                return await response.Content.ReadAsStringAsync();
+            }
+
+            return "";
         }
     }
 }
