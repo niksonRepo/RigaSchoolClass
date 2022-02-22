@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebApiApplication.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/[action]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -18,7 +18,7 @@ namespace WebApiApplication.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
@@ -31,7 +31,15 @@ namespace WebApiApplication.Controllers
         }
 
         [HttpGet]
-        [Route("api/GetName")]
+        [Route("{id:int}")]
+        public int GetId(int id)
+        {
+            _logger.LogWarning("test warning");
+            return id;
+        }
+
+        [HttpGet]
+        [Route("{name}")]
         public string GetName(string name)
         {
             _logger.LogWarning("test warning");
