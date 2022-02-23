@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace WebApiApplication.Controllers
 {
@@ -49,9 +50,9 @@ namespace WebApiApplication.Controllers
             return name;
         }
 
-        [HttpPost]
+        [HttpGet]
         [Route("{movieTitle}")]
-        public async Task<string> GetMovies(string movieTitle)
+        public async Task<string?> GetMovies(string movieTitle)
         {
             var url = @"http://www.omdbapi.com/?t={" + movieTitle + @"}&apikey=3e9b408";
 
@@ -60,7 +61,7 @@ namespace WebApiApplication.Controllers
 
             if ( response.IsSuccessStatusCode )
             {
-                return await response.Content.ReadAsStringAsync();
+                return JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result).ToString();
             }
 
             return "";

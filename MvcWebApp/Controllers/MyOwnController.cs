@@ -1,10 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MvcWebApp.Models;
+using Newtonsoft.Json;
 
 namespace MvcWebApp.Controllers
 {
     public class MyOwnController : Controller
     {
+        private readonly IHttpClientFactory _httpClientFactory;
+
+        public MyOwnController(IHttpClientFactory httpClientFactory)
+        {
+            _httpClientFactory = httpClientFactory;
+        }
+
         public IActionResult Index()
         {
             var model = new MyOwnModel()
@@ -41,6 +49,21 @@ namespace MvcWebApp.Controllers
         public void ModifyViewData1()
         {
 
+        }
+        
+        public async Task<string?> GetMovie(string movieTitle)
+        {
+            var url = $"https://localhost:7128/api/WeatherForecast/GetMovies/{movieTitle}";
+
+            var httpClient = _httpClientFactory.CreateClient();
+            var response = await httpClient.GetAsync(url);
+
+            if ( response.IsSuccessStatusCode )
+            {
+                return response.Content.ReadAsStringAsync().Result;
+            }
+
+            return "";
         }
     }
 }
