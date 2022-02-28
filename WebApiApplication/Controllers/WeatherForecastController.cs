@@ -58,13 +58,20 @@ namespace WebApiApplication.Controllers
 
             var httpClient = _httpClientFactory.CreateClient();
             var response = await httpClient.GetAsync(url);
+            var result = response.Content.ReadAsStringAsync().Result;
 
             if ( response.IsSuccessStatusCode )
             {
-                return JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result).ToString();
+                return JsonConvert.DeserializeObject(result).ToString();
             }
 
             return "";
+        }
+
+        [HttpPost]
+        public void TestData()
+        {
+
         }
     }
 }

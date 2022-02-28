@@ -6,7 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace WcfServiceApp
+namespace WcfService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
@@ -28,6 +28,18 @@ namespace WcfServiceApp
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        public int GetInt()
+        {
+            return 0;
+        }
+
+        public int GetRandomNumber()
+        {
+            var random = new Random();
+
+            return random.Next(1, 10);
         }
     }
 }

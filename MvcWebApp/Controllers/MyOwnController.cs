@@ -51,19 +51,20 @@ namespace MvcWebApp.Controllers
 
         }
         
-        public async Task<string?> GetMovie(string movieTitle)
+        public async Task<IActionResult> GetMovie(string movieTitle)
         {
             var url = $"https://localhost:7128/api/WeatherForecast/GetMovies/{movieTitle}";
 
             var httpClient = _httpClientFactory.CreateClient();
             var response = await httpClient.GetAsync(url);
+            var result = JsonConvert.DeserializeObject(response.Content.ReadAsStringAsync().Result);
 
             if ( response.IsSuccessStatusCode )
             {
-                return response.Content.ReadAsStringAsync().Result;
+               // return View(result);
             }
 
-            return "";
+            return View(null);
         }
     }
 }
